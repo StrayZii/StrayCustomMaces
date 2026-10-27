@@ -1,0 +1,43 @@
+name: StrayCustomMaces
+version: '1.1-for-sale'
+main: org.strayzii.strayCustomMaces.StrayCustomMaces
+api-version: '1.21'
+
+softdepend:
+  - StrayWeapons
+
+depend:
+  - PlaceholderAPI
+  - LuckPerms
+
+commands:
+  straycustommaces:
+    aliases: [maces]
+    description: The Main command.
+    permission: straycustommaces.command
+    usage: /straycustommaces <reload|set>
+
+permissions:
+  straycustommaces.command:
+    description: Allows using the main command.
+    default: op
+
+  straycustommaces.command.*:
+    description: Allows using all StrayCustomMaces commands.
+    default: op
+    children:
+      straycustommaces.command.reload: true
+      straycustommaces.command.set: true
+      straycustommaces.command.set.others: true
+
+  straycustommaces.command.reload:
+    description: Allows reloading the plugin configuration.
+    default: op
+
+  straycustommaces.command.set:
+    description: Allows selecting a mace skin.
+    default: op
+
+  straycustommaces.command.set.others:
+    description: Allows selecting a mace skin for another player.
+    default: op

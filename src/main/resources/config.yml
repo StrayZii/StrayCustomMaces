@@ -1,0 +1,39 @@
+# MiniMessage only
+# Для полного использования вам нужен ресурспак.
+# Команды:
+# /maces reload - Перезагружает конфигурацию.
+# /maces set <skin> <player> - Если вы указали имя игрока ему выставиться скин а если нет то вам.
+# Так-же, чтоб выставить скин вам нужно обладать правами которые прописаны в maces.<skin>
+#
+# Зависимости:
+# PlaceholderAPI
+# LuckPerms
+# Без этих зависимостей плагин не запуститься
+# Плейсхолдеры:
+# %straycustommaces_<skin>% возвращает "yes" если у игрока есть скин и если нет то возвращает "no"
+# На этом всё. Если будут вопросы смело задавайте мне!
+
+maces: # Скины на мейсы.
+  void: # ID Скина. (используется в ресурспаке как straycustommaces:void)
+    permission: straycustommaces.mace.void # Право на скин.
+
+players: # Данные игроков.
+  StrayZii: void # void это скин который сейчас используется игроком.
+
+messages: # Сообщения на команды.
+  prefix: "<#4498DB>ᴍᴀᴄᴇs <dark_gray>»<reset>"
+
+  usage: "$prefix <#B5C4E0>/maces < reload | set > <skin | none> [player]"
+  no-permission: "$prefix <#B5C4E0>У вас нет прав!"
+  no-console: "$prefix <#B5C4E0>Эту команду может выполнить только игрок!"
+
+  player-not-online: "$prefix <#B5C4E0>Игрок $player был не найден! (Он должен быть онлайн)"
+  wrong-skin-name: "$prefix <#B5C4E0>Неверное название скина!"
+  doesnt-have-skin: "$prefix <#B5C4E0>У вас нет этого скина!"
+
+  reload: "$prefix <#B5C4E0>Конфигурация успешно перезагружена!"
+  # $skin - the skin you've set
+  set: "$prefix <#B5C4E0>Успешно поставили скин $skin"
+  set-others: "$prefix <#B5C4E0>Успешно поставили скин $skin игроку $player"
+  reset: "$prefix <#B5C4E0>Скин сброшен"
+  reset-others: "$prefix <#B5C4E0>Скин игрока $player сброшен"
